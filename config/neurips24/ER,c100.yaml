@@ -1,0 +1,21 @@
+learner         :       ER
+optim           :       AdamW
+learning_rate   :       0.0005
+momentum        :       0
+weight_decay    :       0.0001
+dataset         :       mixed_cifar100
+synthetic_source:       xl
+syn_root        :       /home/User/<PATH/TO/SYNTHETIC/DATA>
+img_size        :       32
+n_classes       :       100
+n_tasks         :       10
+mem_size        :       5000
+mem_batch_size  :       64
+batch_size      :       10
+nf              :       64
+tf_type         :       full
+training_type   :       inc
+seed            :       0
+portion         :       0.8
+norm_layer      :       bn
+

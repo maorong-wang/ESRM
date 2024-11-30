@@ -1,0 +1,63 @@
+program         :       main.py
+method          :       grid
+project         :       FR,SYN,tiny,OCM
+metric:
+  name: avg_acc
+  goal: maximize
+parameters:
+  learner         :       
+    values: [OCM]
+  dataset         :       
+    values: [mixed_tiny, tiny]
+  synthetic_source:
+    values: [xl, mix]
+  syn_root:
+    value: /home/User/<PATH/TO/SYNTHETIC/DATA>
+  img_size        :
+    value: 64
+  dim_in          :
+    value: 2048
+  n_classes       :
+    value: 200
+  n_tasks         :       
+    value: 100
+  optim:
+    value: AdamW
+  weight_decay:
+    value: 0
+  learning_rate   :
+    value: 0.001
+  momentum:
+    value: 0.9
+  n_runs          :
+    value: 1
+  mem_size        :
+    values: [10000]
+  mem_batch_size  :
+    value: 64
+  batch_size      :
+    value: 10
+  supervised      :
+    value: True
+  mem_iters       :
+    value: 1
+  seed            :
+    values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  portion:
+    values: [0.5, 0.7, 0.8, 0.9, 0.95]
+  norm_layer:
+    values: [bn]
+  proj_dim        :
+    value: 128
+  tag             :
+    value: hpsearch
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - --sweep 
+  - --data-root-dir
+  - /home/User/<PATH/TO/ORIGINAL/DATASET>
+  - --results-root
+  - ./sweeps/csv/
+
