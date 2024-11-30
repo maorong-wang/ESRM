@@ -12,7 +12,7 @@ parameters:
   synthetic_source:
     values: [xl, mix]
   syn_root:
-    value: /home/ma_wang/python/syn_ocl/data/cifar100_sync
+    value: /home/User/<PATH/TO/SYNTHETIC/DATA>
   n_classes       :
     value: 100
   n_tasks         :       
@@ -59,6 +59,6 @@ command:
   - ${program}
   - --sweep 
   - --data-root-dir
-  - /home/ma_wang/python/syn_ocl/data
+  - /home/User/<PATH/TO/ORIGINAL/DATASET>
   - --results-root
   - ./sweeps/csv/
